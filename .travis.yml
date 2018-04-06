@@ -20,7 +20,8 @@ script:
   # Your test script goes here
   - pytest tests
   - pytest --pylint --pylint-rcfile=.pyrcfile --pylint-error-types=EF splinart
-  - pytest --cov=splinart tests
+  - cd tests
+  - pytest --cov=splinart
 
 after_success:
   - codecov  -e $TRAVIS_PYTHON_VERSION
